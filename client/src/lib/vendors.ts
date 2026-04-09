@@ -88,12 +88,12 @@ export const vendors: Vendor[] = [
     description:
       'Teneo.ai claims the highest automation accuracy in the industry (95%+ on the BANKING77 benchmark) and has surpassed 17,000 AI agents in production. They specialise in complex, multi-turn enterprise conversations and seamless overlay integration with existing CCaaS platforms. Their platform authenticates customers, retrieves live data, and applies corrections within defined authority — all without human intervention.',
     whyNRMA:
-      'Highly relevant for Energy Retail, where billing queries, payment plans, and meter data retrieval require both accuracy and live backend integration. Their overlay model means no Avaya replacement required.',
+      'Relevant for NRMA Energy\'s EV charging network, where charge point fault queries, session billing disputes, and roaming access questions require accurate, live backend integration. Their overlay model means no Avaya replacement required.',
     keyCapabilities: [
       '95%+ automation accuracy (BANKING77 benchmark)',
       '17,000+ AI agents in production',
-      'Live billing data retrieval and anomaly detection',
-      'Payment plan negotiation within defined authority',
+      'Live session and billing data retrieval',
+      'Charge point fault triage and escalation workflows',
       'Seamless CCaaS overlay — no rip-and-replace',
       'Perfect scores in DMG Consulting 2025 satisfaction report',
     ],
@@ -105,7 +105,7 @@ export const vendors: Vendor[] = [
     ],
     website: 'https://www.teneo.ai',
     presalesAngle:
-      'Ask them to walk through a live energy billing dispute scenario — how does the AI handle a customer who disputes a bill and wants to escalate? What are the guardrails?',
+      'Ask them to walk through a live EV charging session dispute scenario — how does the AI handle a customer who was incorrectly charged for a charge session and wants to escalate? What are the guardrails?',
   },
   {
     id: 'cresta',
@@ -116,7 +116,7 @@ export const vendors: Vendor[] = [
     description:
       'Born out of Stanford\'s AI lab, Cresta is a real-time intelligence platform that acts as a live coach during every call. It identifies the behaviors of top-performing agents and surfaces those insights to all agents in real-time — prompting the right response, the right upsell, or the right de-escalation technique at exactly the right moment. Their Command Hub (launched Dec 2025) gives leaders on-demand Voice of Customer insights.',
     whyNRMA:
-      'Excellent for upselling in the travel and parks division (upgrade to premium park site, add-on Coral Adventures excursion) and for handling complex energy billing disputes where agents need real-time guidance on negotiation and policy.',
+      'Excellent for upselling in the travel and parks division (upgrade to premium park site, add-on Coral Adventures excursion) and for handling complex EV charging queries where agents need real-time guidance on network access, roaming, and session troubleshooting.',
     keyCapabilities: [
       'Real-time agent coaching from top-performer data',
       'Sales conversion optimization',
@@ -144,7 +144,7 @@ export const vendors: Vendor[] = [
     description:
       'Balto specialises in real-time call guidance with a strong focus on compliance execution and sales consistency. It provides dynamic, context-aware checklists that update as the conversation progresses, and alerts managers instantly if a call goes off-track. Balto claims a 26% increase in conversion rates within 45 days of deployment.',
     whyNRMA:
-      'Ensures compliance during energy retail sign-ups (mandatory disclosure requirements) or complex rental agreement explanations, reducing errors and protecting NRMA from regulatory exposure.',
+      'Ensures compliance during EV charging network onboarding (access agreements, roaming terms) and complex rental agreement explanations, reducing errors and protecting NRMA from regulatory exposure.',
     keyCapabilities: [
       'Dynamic real-time compliance checklists',
       'Instant manager alerts for off-track calls',
@@ -161,7 +161,7 @@ export const vendors: Vendor[] = [
     ],
     website: 'https://www.balto.ai',
     presalesAngle:
-      'Ask them to show the compliance checklist feature for a regulated product disclosure scenario. How does it handle agents who skip required disclosures?',
+      'Ask them to show the compliance checklist feature for an EV charging access agreement or rental damage disclosure scenario. How does it handle agents who skip required steps?',
   },
   {
     id: 'cogito',
@@ -200,7 +200,7 @@ export const vendors: Vendor[] = [
     description:
       'Cognigy is a leader in enterprise conversational AI orchestration, allowing businesses to build complex, agentic workflows that connect various LLMs (Google, OpenAI, Azure) with backend systems. Crucially, they hold a formal integration partnership with Avaya, making them the lowest-risk "overlay" candidate for NRMA\'s existing infrastructure. Their platform supports both voice and digital channels from a single workflow engine.',
     whyNRMA:
-      'The Avaya partnership minimises integration risk and accelerates time-to-value. NRMA can build custom AI workflows across all business units — roadside dispatch, park bookings, energy billing — without replacing the core telephony engine.',
+      'The Avaya partnership minimises integration risk and accelerates time-to-value. NRMA can build custom AI workflows across all business units — roadside dispatch, park bookings, EV charging support — without replacing the core telephony engine.',
     keyCapabilities: [
       'Formal Avaya integration partnership',
       'Multi-LLM orchestration (Google, OpenAI, Azure)',
@@ -257,7 +257,7 @@ export const vendors: Vendor[] = [
     description:
       'Kore.ai accelerates enterprise AI deployment through their XO Platform, which offers over 200 production-ready AI agent templates across industries. Their platform supports both customer-facing and employee-facing workflows, with strong support for 120+ languages and proven integrations with major CCaaS platforms including Zoom Contact Center.',
     whyNRMA:
-      'Their pre-built templates and strong enterprise integration track record make them a fast path to value for automating routine inquiries across rentals, parks, and energy — without starting from scratch.',
+      'Their pre-built templates and strong enterprise integration track record make them a fast path to value for automating routine inquiries across rentals, parks, and EV charging — without starting from scratch.',
     keyCapabilities: [
       '200+ production-ready agent templates',
       'Voice and digital channel support',
@@ -274,7 +274,7 @@ export const vendors: Vendor[] = [
     ],
     website: 'https://www.kore.ai',
     presalesAngle:
-      'Ask them to show the closest template to NRMA\'s use cases (e.g., utility billing or travel booking). How much customisation is typically required, and what does the deployment timeline look like?',
+      'Ask them to show the closest template to NRMA\'s use cases (e.g., EV charging support or travel booking). How much customisation is typically required, and what does the deployment timeline look like?',
   },
 ];
 
@@ -289,7 +289,8 @@ export const businessUnitLabels: Record<BusinessUnit, string> = {
   roadside: 'Roadside Assistance',
   sixt: 'Sixt Car Rental',
   'parks-marine': 'Parks & Marine',
-  energy: 'Energy Retail',
+  energy: 'EV Charging & Energy',
+
   'cross-portfolio': 'Cross-Portfolio',
 };
 
@@ -309,7 +310,7 @@ export const strategicContext = {
       icon: '⚡',
       title: 'Agentic Capabilities',
       description:
-        'Moving beyond basic FAQs to autonomous execution of tasks — booking a rental car, dispatching a tow truck, or managing an energy billing dispute — by integrating directly with backend APIs.',
+        'Moving beyond basic FAQs to autonomous execution of tasks — booking a rental car, dispatching a tow truck, or resolving an EV charging session fault — by integrating directly with backend APIs.',
     },
     {
       icon: '🎙️',
@@ -352,10 +353,10 @@ export const useCaseMatrix = [
     vendorIds: ['cognigy', 'cresta'],
   },
   {
-    unit: 'Energy Retail',
-    useCase: 'Proactive Outbound & Billing Support',
+    unit: 'NRMA Energy — EV Charging',
+    useCase: 'Charge Point Support & Session Assistance',
     detail:
-      'Predictive AI that identifies customers at risk of bill shock and initiates proactive outbound voice or SMS outreach to arrange payment plans, alongside inbound agents handling routine meter queries and tariff changes.',
+      'AI agents handling inbound queries about charge point faults, failed or disputed charging sessions, network access and roaming, and EV charging account management — freeing human agents for complex escalations while providing 24/7 first-line support across the charging network.',
     vendors: ['Teneo.ai', 'Balto'],
     vendorIds: ['teneo', 'balto'],
   },
@@ -380,7 +381,7 @@ export const presalesQuestions = [
     number: '02',
     question: 'Agentic Execution',
     detail:
-      'Show us how your AI moves beyond intent recognition to actual task execution — modifying a rental reservation, dispatching a roadside vehicle, or arranging an energy payment plan — via live API calls.',
+      'Show us how your AI moves beyond intent recognition to actual task execution — modifying a rental reservation, dispatching a roadside vehicle, or resolving an EV charging session dispute — via live API calls.',
   },
   {
     number: '03',
